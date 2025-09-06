@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
@@ -8,11 +7,25 @@
 </head>
 <form id ="email">
   <input type="text" id="userInput" required>
+  <button type="submit">submit</button>
 </form>
-<button type="submit">submit</button>
+  <p id="result"></p>
 <body>
   <a href="Signup.html"> go to signup </a>
   <h1>
   </h1>
 </body>
+  <script>
+  // 1. Find the form and listen when it gets submitted
+  document.getElementById("myForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // stop the page from reloading
+
+    // 2. Grab what the user typed into the input box
+    const typed = document.getElementById("myInput").value;
+
+    // 3. Find the result <p> and change its text
+    document.getElementById("result").textContent = "You said: " + typed;
+  });
+    </script>
+  
 </html>
